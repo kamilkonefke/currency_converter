@@ -2,7 +2,13 @@
 [idea taken from](https://youtu.be/gXmznGEW9vo?si=DXf61nw6zoxXEJC_&t=590)
 
 ## Motivation
-The motivation behind this project is to learn Go and understand how web APIs work for my future projects.
+The motivation behind this project is to learn Go and understand how web APIs work for my future projects. In the future I want to add to this project more currencies and crypto currencies.
+
+## Technologies used
+- Go (ofc)
+- [charmbracelet/huh](https://github.com/charmbracelet/huh)
+- [joho/godotenv](https://github.com/joho/godotenv)
+- And some standard libraries like ```net/http``` ```encoding/json``` and more.
 
 ## How to run
 1. Clone repository ```git clone https://github.com/kamilkonefke/currency_converter```
