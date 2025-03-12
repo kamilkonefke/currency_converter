@@ -29,6 +29,17 @@ type ExchangeRates struct {
 	Rates      map[string]float64 `json:"rates"`
 }
 
+var currencies = huh.NewOptions(
+    "EUR",
+    "USD",
+    "GBP",
+    "JPY",
+    "PLN",
+    "CZK",
+    "CHF",
+    "RUB",
+)
+
 var api string;
 
 func main() {
@@ -36,23 +47,13 @@ func main() {
         huh.NewGroup(
             huh.NewNote().Description("Currency converter app!"),
             huh.NewSelect[string]().Title("From").
-            Options(
-                huh.NewOption("€ EUR", "EUR"),
-                huh.NewOption("$ USD", "USD"),
-                huh.NewOption("£ GBP", "GBP"),
-                huh.NewOption("zl PLN", "PLN"),
-            ).
-            Height(5).
+            Options(currencies...).
+            Height(8).
             Value(&currency_from),
 
             huh.NewSelect[string]().Title("To").
-            Options(
-                huh.NewOption("€ EUR", "EUR"),
-                huh.NewOption("$ USD", "USD"),
-                huh.NewOption("£ GBP", "GBP"),
-                huh.NewOption("zl PLN", "PLN"),
-            ).
-            Height(5).
+            Options(currencies...).
+            Height(8).
             Value(&currency_to),
 
             huh.NewInput().Value(&amount).Title("Amount"),
